@@ -169,11 +169,11 @@ mit-b4 FPN 384 | 0.8497 | 0.8629
 
 ### 4. Final submission
 The final submission is the ensemble of 6 models:
-- Final1: 0.25 exp3_mit_b4 + 0.25 exp5_mit_b4 + 0.125 exp2_vit_large + 0.125 exp4_vit_large + 0.125 exp2_eva_large + 0.125 exp2_eva_large
+- Final : 0.25 exp3_mit_b4 + 0.25 exp5_mit_b4 + 0.125 exp2_vit_large + 0.125 exp4_vit_large + 0.125 exp2_eva_large + 0.125 exp2_eva_large
 
 Notebook | Local CV  | Public LB | Private LB | Rank
 :-------:|:---------:|:---------:|:----------:|:----|
-Final1  | 0.8823 | 0.89 |
+Final  | 0.8823 | 0.89 |
 
 ### 5. Demo-Test
 Since my submission is an ensemble of multiple models (for increased accuracy), it's quite difficult for users to use. The purpose of this notebook is to package the models into a library so that users can use my solution to test or deploy into their products.
