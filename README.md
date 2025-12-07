@@ -4,7 +4,7 @@
 
 A brief, easy-to-understand web introduction for this project is available here:
 
-👉 **https://rsna-frontend-m1j0bbq51-pugazhendhi-s-projects.vercel.app/**
+👉 **[https://rsna-frontend-m1j0bbq51-pugazhendhi-s-projects.vercel.app/](https://rsna-frontend-git-main-pugazhendhi-s-projects.vercel.app?_vercel_share=A7D2fVdohw83byS7DQjpyRVlxvq1sBJr)**
 
 
 ### 1. Environment
