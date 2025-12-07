@@ -39,7 +39,6 @@ dataset
 ├── train.csv
 ├── train_localizers.csv
 ├── train_kfold.csv                 ### my kfold
-├── kaggle_evaluation
 └── external
     ├── Lausanne_TOFMRA
     │   ├── derivatives
@@ -178,8 +177,8 @@ mit-b4 FPN 384 | 0.8497 | 0.8629
 The final submission is the ensemble of 6 models:
 - Final : 0.25 exp3_mit_b4 + 0.25 exp5_mit_b4 + 0.125 exp2_vit_large + 0.125 exp4_vit_large + 0.125 exp2_eva_large + 0.125 exp2_eva_large
 
-Notebook | Local CV  | Public LB | Private LB | Rank
-:-------:|:---------:|:---------:|:----------:|:----|
+Notebook | Training AUC Score  | Testing AUC Score
+:-------:|:---------:|:---------:|
 Final  | 0.8823 | 0.89 |
 
 ### 5. Demo-Test
