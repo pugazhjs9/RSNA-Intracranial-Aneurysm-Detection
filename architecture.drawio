@@ -1,0 +1,732 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="ImWckPWs1BQMqFN67a4-">
+    <mxGraphModel dx="2935" dy="1985" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-1" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=#F0FDF4;strokeColor=#166534;fontColor=#14532D;" value="📡 Observability" vertex="1">
+          <mxGeometry height="152" width="1260" x="1793" y="4832" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-2" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=#F8FAFC;strokeColor=#475569;fontColor=#1E293B;" value="💾 Storage Layer" vertex="1">
+          <mxGeometry height="160" width="815" x="2481" y="4598" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-3" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=#EFF6FF;strokeColor=#2563EB;fontColor=#1E3A8A;" value="🚀 Production Inference" vertex="1">
+          <mxGeometry height="1382" width="1753" x="20" y="3602" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-4" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=#FFF7ED;strokeColor=#EA580C;fontColor=#7C2D12;" value="⚡ Ray Serve GPU Cluster (A10G)" vertex="1">
+          <mxGeometry height="736" width="947" x="380" y="3627" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-5" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=#FDF2F8;strokeColor=#EC4899;fontColor=#831843;" value="📦 Model Registry" vertex="1">
+          <mxGeometry height="401" width="347" x="734" y="3126" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-6" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=#ECFDF5;strokeColor=#059669;fontColor=#064E3B;" value="📊 Evaluation &amp; Ensemble" vertex="1">
+          <mxGeometry height="474" width="1334" x="577" y="2578" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-7" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=#FEF2F2;strokeColor=#DC2626;fontColor=#7F1D1D;" value="🧠 Model Training Pipeline" vertex="1">
+          <mxGeometry height="778" width="2037" x="356" y="1750" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-8" parent="1" style="whiteSpace=wrap;strokeWidth=1;fillColor=#FFF1F2;strokeColor=#FCA5A5;fontColor=#881337;" value="Exp5 — Multi-Task (+ Pseudo)" vertex="1">
+          <mxGeometry height="226" width="613" x="1428" y="2277" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-9" parent="1" style="whiteSpace=wrap;strokeWidth=1;fillColor=#FFF1F2;strokeColor=#FCA5A5;fontColor=#881337;" value="Exp4 — Classification (+ Pseudo)" vertex="1">
+          <mxGeometry height="226" width="681" x="727" y="2277" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-10" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=#F5F3FF;strokeColor=#8B5CF6;fontColor=#4C1D95;" value="🔄 Pseudo Labeling" vertex="1">
+          <mxGeometry height="128" width="1244" x="782" y="2075" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-11" parent="1" style="whiteSpace=wrap;strokeWidth=1;fillColor=#FFF1F2;strokeColor=#FCA5A5;fontColor=#881337;" value="Exp3 — Multi-Task (RSNA)" vertex="1">
+          <mxGeometry height="226" width="569" x="376" y="1775" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-12" parent="1" style="whiteSpace=wrap;strokeWidth=1;fillColor=#FFF1F2;strokeColor=#FCA5A5;fontColor=#881337;" value="Exp2 — Classification (RSNA)" vertex="1">
+          <mxGeometry height="226" width="543" x="1286" y="1775" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-13" parent="1" style="whiteSpace=wrap;strokeWidth=1;fillColor=#FFF1F2;strokeColor=#FCA5A5;fontColor=#881337;" value="Exp1 — Brain Detection" vertex="1">
+          <mxGeometry height="226" width="301" x="965" y="1775" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-14" parent="1" style="whiteSpace=wrap;strokeWidth=1;fillColor=#FFF1F2;strokeColor=#FCA5A5;fontColor=#881337;" value="Exp0 — Aneurysm Detection" vertex="1">
+          <mxGeometry height="226" width="301" x="1848" y="1775" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-15" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=#FFFBEB;strokeColor=#D97706;fontColor=#78350F;" value="🔧 Feature Engineering" vertex="1">
+          <mxGeometry height="545" width="1671" x="493" y="1131" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-16" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=#F0FDFA;strokeColor=#0D9488;fontColor=#134E4A;" value="⚙️ Preprocessing Pipeline" vertex="1">
+          <mxGeometry height="488" width="1217" x="942" y="569" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-17" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=#EEF2FF;strokeColor=#6366F1;fontColor=#312E81;" value="📥 Data Ingestion Layer" vertex="1">
+          <mxGeometry height="217" width="883" x="1010" y="278" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-18" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=#EBF5FF;strokeColor=#3A7BD5;fontColor=#1E3A5F;" value="🗄️ Data Sources" vertex="1">
+          <mxGeometry height="184" width="798" x="1145" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-19" parent="1" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=10;strokeWidth=2;whiteSpace=wrap;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="RSNA Competition&#xa;DICOM Series&#xa;+ CSV Labels" vertex="1">
+          <mxGeometry height="134" width="215" x="1180" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-20" parent="1" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=10;strokeWidth=2;whiteSpace=wrap;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Lausanne&#xa;TOF-MRA" vertex="1">
+          <mxGeometry height="82" width="168" x="1483" y="71" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-21" parent="1" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=10;strokeWidth=2;whiteSpace=wrap;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Royal Brisbane&#xa;TOF-MRA" vertex="1">
+          <mxGeometry height="86" width="207" x="1701" y="69" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-22" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Kaggle API&#xa;Download" vertex="1">
+          <mxGeometry height="54" width="218" x="1178" y="303" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-23" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="AWS S3 Sync&#xa;OpenNeuro" vertex="1">
+          <mxGeometry height="54" width="241" x="1446" y="303" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-24" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;strokeWidth=2;whiteSpace=wrap;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="DICOM Validation&#xa;&amp; Integrity Check" vertex="1">
+          <mxGeometry height="63" width="277" x="1149" y="407" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-25" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="dicom2image&#xa;_slice_level.py" vertex="1">
+          <mxGeometry height="54" width="276" x="979" y="594" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-26" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="dicom2image&#xa;_lausanne.py" vertex="1">
+          <mxGeometry height="54" width="263" x="1316" y="594" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-27" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="dicom2image&#xa;_royal_brisbane.py" vertex="1">
+          <mxGeometry height="54" width="305" x="1629" y="594" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-28" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="CT Windowing&#xa;W:450 C:40" vertex="1">
+          <mxGeometry height="54" width="257" x="1309" y="698" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-29" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Intensity Norm&#xa;0–255 uint8" vertex="1">
+          <mxGeometry height="78" width="260" x="1308" y="826" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-30" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="3-Channel Stack&#xa;t-1 | t | t+1" vertex="1">
+          <mxGeometry height="78" width="260" x="1308" y="954" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-31" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="prepare_label&#xa;_slice_level.py" vertex="1">
+          <mxGeometry height="54" width="281" x="977" y="966" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-32" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Brain BBox&#xa;Annotation&#xa;LabelImg" vertex="1">
+          <mxGeometry height="78" width="267" x="1304" y="1156" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-33" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Aneurysm BBox&#xa;Annotation&#xa;±10 Slice Search" vertex="1">
+          <mxGeometry height="102" width="260" x="1869" y="1549" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-34" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Brain Region&#xa;Cropping&#xa;Ratio 0.75" vertex="1">
+          <mxGeometry height="102" width="260" x="1308" y="1284" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-35" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;strokeWidth=2;whiteSpace=wrap;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Albumentations&#xa;ResizedCrop | Rotate&#xa;Blur | CLAHE | HSV" vertex="1">
+          <mxGeometry height="63" width="298" x="1289" y="1436" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-36" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;strokeWidth=2;whiteSpace=wrap;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="5-Fold Stratified&#xa;Split" vertex="1">
+          <mxGeometry height="39" width="235" x="1000" y="1581" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-37" parent="1" style="rounded=1;whiteSpace=wrap;arcSize=50;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="YOLOv11&#xa;1280px | 5-Fold" vertex="1">
+          <mxGeometry height="63" width="231" x="1883" y="1800" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-38" parent="1" style="shape=mxgraph.arrows2.arrow;dy=0;dx=0;notch=20;strokeWidth=2;whiteSpace=wrap;spacingLeft=10;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="mAP50: 0.702&#xa;mAP50-95: 0.465" vertex="1">
+          <mxGeometry height="63" width="231" x="1883" y="1913" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-39" parent="1" style="rounded=1;whiteSpace=wrap;arcSize=50;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="YOLOv5-v7.0&#xa;640px | batch 512" vertex="1">
+          <mxGeometry height="63" width="231" x="1000" y="1800" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-40" parent="1" style="shape=mxgraph.arrows2.arrow;dy=0;dx=0;notch=20;strokeWidth=2;whiteSpace=wrap;spacingLeft=10;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="mAP50: 0.995&#xa;mAP50-95: 0.948" vertex="1">
+          <mxGeometry height="63" width="231" x="1000" y="1913" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-41" parent="1" style="rounded=1;whiteSpace=wrap;arcSize=50;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="ViT-Large 384&#xa;CLIP OpenAI" vertex="1">
+          <mxGeometry height="63" width="231" x="1321" y="1800" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-42" parent="1" style="rounded=1;whiteSpace=wrap;arcSize=50;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="EVA-Large 384&#xa;IN22K" vertex="1">
+          <mxGeometry height="39" width="192" x="1601" y="1812" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-43" parent="1" style="shape=mxgraph.arrows2.arrow;dy=0;dx=0;notch=20;strokeWidth=2;whiteSpace=wrap;spacingLeft=10;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="AUC: 0.8503&#xa;AUC: 0.8551" vertex="1">
+          <mxGeometry height="63" width="231" x="1321" y="1913" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-44" parent="1" style="rounded=1;whiteSpace=wrap;arcSize=50;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="MiT-B4 FPN 384&#xa;Cls + Seg" vertex="1">
+          <mxGeometry height="39" width="223" x="478" y="1812" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-45" parent="1" style="shape=mxgraph.arrows2.arrow;dy=0;dx=0;notch=20;strokeWidth=2;whiteSpace=wrap;spacingLeft=10;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="AUC: 0.8549" vertex="1">
+          <mxGeometry height="39" width="119" x="530" y="1925" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-46" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="clean_rsna_neg.py&#xa;Score &gt; 0.9 → Pos" vertex="1">
+          <mxGeometry height="78" width="260" x="1113" y="2100" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-47" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="create_pseudo_label.py&#xa;Score &gt; 0.5 + Exp0" vertex="1">
+          <mxGeometry height="78" width="290" x="1432" y="2100" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-48" parent="1" style="rounded=1;whiteSpace=wrap;arcSize=50;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="ViT-Large 384&#xa;Cleaned + External" vertex="1">
+          <mxGeometry height="63" width="231" x="764" y="2302" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-49" parent="1" style="rounded=1;whiteSpace=wrap;arcSize=50;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="EVA-Large 384&#xa;Cleaned + External" vertex="1">
+          <mxGeometry height="63" width="231" x="1045" y="2302" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-50" parent="1" style="shape=mxgraph.arrows2.arrow;dy=0;dx=0;notch=20;strokeWidth=2;whiteSpace=wrap;spacingLeft=10;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="AUC: 0.8558&#xa;AUC: 0.8579" vertex="1">
+          <mxGeometry height="63" width="231" x="904" y="2415" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-51" parent="1" style="rounded=1;whiteSpace=wrap;arcSize=50;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="MiT-B4 FPN 384&#xa;Cleaned + External" vertex="1">
+          <mxGeometry height="63" width="231" x="1775" y="2302" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-52" parent="1" style="shape=mxgraph.arrows2.arrow;dy=0;dx=0;notch=20;strokeWidth=2;whiteSpace=wrap;spacingLeft=10;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="AUC: 0.8629" vertex="1">
+          <mxGeometry height="39" width="119" x="1831" y="2427" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-53" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;strokeWidth=2;whiteSpace=wrap;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="OOF Evaluation&#xa;Weighted AUC&#xa;Per Anatomy" vertex="1">
+          <mxGeometry height="87" width="277" x="769" y="2603" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-54" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Ensemble Weights&#xa;0.25×exp3 + 0.25×exp5&#xa;0.125×vit2 + 0.125×vit4&#xa;0.125×eva2 + 0.125×eva4" vertex="1">
+          <mxGeometry height="150" width="260" x="778" y="2764" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-55" parent="1" style="rounded=1;whiteSpace=wrap;arcSize=50;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="✅ Final Score&#xa;Train: 0.8823&#xa;Test: 0.89" vertex="1">
+          <mxGeometry height="63" width="231" x="792" y="2964" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-56" parent="1" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=10;strokeWidth=2;whiteSpace=wrap;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="6 Model&#xa;Checkpoints&#xa;.pt files" vertex="1">
+          <mxGeometry height="110" width="215" x="800" y="3151" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-57" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Ensemble Config&#xa;Weights + Thresholds" vertex="1">
+          <mxGeometry height="78" width="260" x="778" y="3312" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-58" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;strokeWidth=2;whiteSpace=wrap;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Model Versioning&#xa;A/B Flags" vertex="1">
+          <mxGeometry height="63" width="277" x="769" y="3440" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-59" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="API Gateway&#xa;Kong&#xa;Auth | RL | mTLS" vertex="1">
+          <mxGeometry height="78" width="260" x="1362" y="4260" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-60" parent="1" style="rounded=1;whiteSpace=wrap;arcSize=50;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Upload Service&#xa;FastAPI&#xa;Multipart DICOM" vertex="1">
+          <mxGeometry height="87" width="240" x="883" y="4437" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-61" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;strokeWidth=2;whiteSpace=wrap;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Kafka Event Bus&#xa;series.uploaded&#xa;series.preprocessed&#xa;series.complete" vertex="1">
+          <mxGeometry height="63" width="553" x="55" y="4647" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-62" parent="1" style="rounded=1;whiteSpace=wrap;arcSize=50;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Preprocessing Svc&#xa;DICOM Parse&#xa;Window | Z-Sort" vertex="1">
+          <mxGeometry height="63" width="231" x="216" y="4877" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-63" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="S1: Brain Det&#xa;YOLOv5 640px&#xa;~30ms" vertex="1">
+          <mxGeometry height="78" width="260" x="778" y="3652" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-64" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="S2: Crop+Resize&#xa;384px CPU&#xa;~10ms" vertex="1">
+          <mxGeometry height="78" width="260" x="1032" y="3804" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-65" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="S3: Cls Ensemble&#xa;4 Models batch=8&#xa;~200ms" vertex="1">
+          <mxGeometry height="78" width="260" x="1032" y="3956" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-66" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="S4: Localizer&#xa;YOLOv11 1280px&#xa;~50ms" vertex="1">
+          <mxGeometry height="78" width="260" x="1032" y="4108" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-67" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="S5: Merge&#xa;Weighted Ensemble&#xa;~1ms" vertex="1">
+          <mxGeometry height="78" width="260" x="1032" y="4260" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-68" parent="1" style="rounded=1;whiteSpace=wrap;arcSize=50;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Result Service&#xa;14-Class Scores&#xa;+ Localizer PNG" vertex="1">
+          <mxGeometry height="63" width="231" x="1281" y="4449" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-69" parent="1" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=10;strokeWidth=2;whiteSpace=wrap;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="S3 / MinIO&#xa;DICOM | Tensors&#xa;PNGs | Weights" vertex="1">
+          <mxGeometry height="110" width="215" x="2516" y="4623" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-70" parent="1" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=10;strokeWidth=2;whiteSpace=wrap;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="PostgreSQL 16&#xa;Series | Predictions&#xa;Audit Log" vertex="1">
+          <mxGeometry height="110" width="215" x="2781" y="4623" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-71" parent="1" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=10;strokeWidth=2;whiteSpace=wrap;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Redis 7 Cluster&#xa;Pred Cache&#xa;Dist Locks" vertex="1">
+          <mxGeometry height="110" width="215" x="3046" y="4623" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-72" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="Prometheus&#xa;+ Grafana&#xa;GPU | Latency | Lag" vertex="1">
+          <mxGeometry height="102" width="260" x="1828" y="4857" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-73" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="OpenTelemetry&#xa;+ Jaeger&#xa;E2E Tracing" vertex="1">
+          <mxGeometry height="78" width="260" x="2138" y="4869" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-74" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="ML Monitoring&#xa;AUC Drift | PSI&#xa;ECE Calibration" vertex="1">
+          <mxGeometry height="78" width="260" x="2448" y="4869" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-75" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="HIPAA Audit&#xa;Immutable Log&#xa;HMAC-SHA256" vertex="1">
+          <mxGeometry height="78" width="260" x="2758" y="4869" as="geometry" />
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-76" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-19" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-22" value="Kaggle CLI">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-77" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-20" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-23" value="aws s3 sync">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-78" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-21" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=1;entryY=0.02;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-23" value="aws s3 sync">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1805" y="278" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-79" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-22" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=0.5;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-24" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-80" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-23" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=1;entryY=0.06;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-24" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1567" y="382" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-81" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-24" style="curved=1;startArrow=none;endArrow=block;exitX=0.16;exitY=1.01;entryX=0.5;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-25" value="RSNA series">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1117" y="495" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-82" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-24" style="curved=1;startArrow=none;endArrow=block;exitX=0.82;exitY=1.01;entryX=0.5;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-26" value="Lausanne">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1448" y="495" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-83" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-24" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.76;entryX=0.5;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-27" value="Royal Brisbane">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1782" y="495" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-84" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-25" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.94;entryX=0.48;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-28" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1428" y="673" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-85" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-26" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=0.52;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-28" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1448" y="673" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-86" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-27" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=1;entryY=0.15;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-28" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1782" y="673" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-87" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-28" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=0.5;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-29" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-88" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-29" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=0.5;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-30" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-89" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-25" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=0.5;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-31" value="labels">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-90" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-30" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=0.5;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-32" value="avg slice">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-91" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-30" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.7;entryX=0.5;entryY=0;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-33" value="centroid search">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1999" y="1057" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-92" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-31" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=0.5;entryY=0;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-36" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-93" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-32" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=0.5;entryY=0;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-34" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-94" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-34" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-35" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-95" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-35" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=0.85;entryY=0;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-36" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1438" y="1524" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-96" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-33" style="curved=1;startArrow=none;endArrow=block;exitX=0.4;exitY=1;entryX=0.41;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-37" value="bbox labels">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1961" y="1676" />
+              <mxPoint x="1961" y="1775" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-97" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-36" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.74;entryX=0.7;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-37" value="fold data">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2081" y="1676" />
+              <mxPoint x="2081" y="1775" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-98" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-36" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-39" value="fold data">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1115" y="1676" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-99" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-36" style="curved=1;startArrow=none;endArrow=block;exitX=0.85;exitY=1;entryX=0.5;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-41" value="fold data">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1436" y="1676" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-100" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-36" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.89;entryX=0.5;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-42" value="fold data">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1697" y="1676" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-101" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-36" style="curved=1;startArrow=none;endArrow=block;exitX=0;exitY=0.93;entryX=0.5;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-44" value="fold data">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="589" y="1676" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-102" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-37" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=0.5;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-38" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-103" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-39" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=0.5;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-40" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-104" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-41" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=0.5;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-43" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-105" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-42" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=1;entryY=0.11;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-43" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1697" y="1888" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-106" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-44" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=0.5;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-45" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-107" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-43" style="curved=1;startArrow=none;endArrow=block;exitX=0.69;exitY=1.01;entryX=0;entryY=0.15;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-46" value="OOF preds">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1517" y="2001" />
+              <mxPoint x="940" y="2038" />
+              <mxPoint x="940" y="2075" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-108" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-45" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.82;entryX=0.66;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-46" value="OOF preds">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="869" y="2001" />
+              <mxPoint x="1312" y="2038" />
+              <mxPoint x="1312" y="2075" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-109" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-38" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=0.24;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-47" value="det boxes">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1999" y="2001" />
+              <mxPoint x="1452" y="2038" />
+              <mxPoint x="1452" y="2075" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-110" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-43" style="curved=1;startArrow=none;endArrow=block;exitX=0.98;exitY=1.01;entryX=1;entryY=0.23;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-47" value="cls scores">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1635" y="2001" />
+              <mxPoint x="2005" y="2038" />
+              <mxPoint x="2005" y="2075" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-111" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-46" style="curved=1;startArrow=none;endArrow=block;exitX=0;exitY=0.76;entryX=0.36;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-48" value="cleaned data">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="822" y="2203" />
+              <mxPoint x="822" y="2277" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-112" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-46" style="curved=1;startArrow=none;endArrow=block;exitX=0.11;exitY=1.01;entryX=0.3;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-49" value="cleaned data">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1077" y="2203" />
+              <mxPoint x="1077" y="2277" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-113" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-46" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.89;entryX=0;entryY=0.23;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-51" value="cleaned data">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1523" y="2203" />
+              <mxPoint x="1523" y="2277" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-114" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-47" style="curved=1;startArrow=none;endArrow=block;exitX=0;exitY=0.7;entryX=0.7;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-48" value="pseudo labels">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="962" y="2203" />
+              <mxPoint x="962" y="2277" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-115" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-47" style="curved=1;startArrow=none;endArrow=block;exitX=0;exitY=0.97;entryX=0.89;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-49" value="pseudo labels">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1323" y="2203" />
+              <mxPoint x="1323" y="2277" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-116" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-47" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.78;entryX=0.78;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-51" value="pseudo labels">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2005" y="2203" />
+              <mxPoint x="2005" y="2277" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-117" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-48" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=0.16;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-50" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="879" y="2390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-118" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-49" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=0.84;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-50" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1160" y="2390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-119" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-51" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=0.5;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-52" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-120" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-43" style="curved=1;startArrow=none;endArrow=block;exitX=0.38;exitY=1.01;entryX=0;entryY=0.02;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-53" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1388" y="2001" />
+              <mxPoint x="683" y="2038" />
+              <mxPoint x="683" y="2578" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-121" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-45" style="curved=1;startArrow=none;endArrow=block;exitX=0.15;exitY=1.01;entryX=0.03;entryY=0;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-53" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="469" y="2001" />
+              <mxPoint x="703" y="2038" />
+              <mxPoint x="703" y="2578" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-122" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-50" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=0.76;entryY=0;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-53" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1020" y="2578" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-123" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-52" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=1;entryY=0.39;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-53" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1890" y="2578" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-124" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-53" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-54" value="weight search">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-125" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-54" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-55" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-126" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-55" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=0.5;entryY=0;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-56" value="best weights">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-127" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-56" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=0.5;entryY=0;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-57" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-128" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-57" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-58" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-129" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-59" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-60" value="HTTPS">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1492" y="4363" />
+              <mxPoint x="1003" y="4400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-130" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-60" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.77;entryX=0;entryY=0.44;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-69" value="raw DICOM">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1408" y="4561" />
+              <mxPoint x="1408" y="4598" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-131" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-60" style="curved=1;startArrow=none;endArrow=block;exitX=0;exitY=0.64;entryX=0.4;entryY=-0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-61" value="event">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="196" y="4561" />
+              <mxPoint x="196" y="4598" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-132" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-61" style="curved=1;startArrow=none;endArrow=block;exitX=0.41;exitY=0.99;entryX=0.27;entryY=0;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-62" value="consume">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="201" y="4758" />
+              <mxPoint x="201" y="4832" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-133" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-62" style="curved=1;startArrow=none;endArrow=block;exitX=0.72;exitY=0;entryX=0.59;entryY=0.99;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-61" value="tensors ready">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="453" y="4832" />
+              <mxPoint x="453" y="4758" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-134" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-61" style="curved=1;startArrow=none;endArrow=block;exitX=0.59;exitY=-0.01;entryX=0;entryY=0.78;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-63" value="dispatch">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="462" y="4598" />
+              <mxPoint x="462" y="3767" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-135" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-63" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-64" value="brain bbox">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1162" y="3767" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-136" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-64" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-65" value="cropped 384px">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-137" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-65" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-66" value="cls scores">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-138" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-66" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-67" value="det boxes">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-139" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-67" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-68" value="final preds">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1162" y="4363" />
+              <mxPoint x="1396" y="4400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-140" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-68" style="curved=1;startArrow=none;endArrow=block;exitX=0;exitY=0.64;entryX=0.5;entryY=-0.01;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-61" value="complete event">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="337" y="4561" />
+              <mxPoint x="337" y="4598" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-141" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-68" style="curved=1;startArrow=none;endArrow=block;exitX=0.88;exitY=1;entryX=0;entryY=0.44;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-70" value="predictions">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1623" y="4561" />
+              <mxPoint x="1623" y="4598" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-142" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-68" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.96;entryX=0;entryY=0.45;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-71" value="hot cache">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1718" y="4561" />
+              <mxPoint x="1718" y="4598" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-143" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-68" style="curved=1;startArrow=none;endArrow=block;exitX=0.7;exitY=1;entryX=0;entryY=0.43;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-69" value="localizer PNG">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1515" y="4561" />
+              <mxPoint x="1515" y="4598" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-144" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-68" style="curved=1;dashed=1;dashPattern=2 3;startArrow=none;endArrow=block;exitX=0.2;exitY=1;entryX=0;entryY=0.41;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-74" value="drift stats">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1222" y="4561" />
+              <mxPoint x="1222" y="4832" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-145" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-68" style="curved=1;dashed=1;dashPattern=2 3;startArrow=none;endArrow=block;exitX=0.36;exitY=1;entryX=0;entryY=0.42;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-75" value="access log">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1314" y="4561" />
+              <mxPoint x="1314" y="4832" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-146" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-70" style="curved=1;dashed=1;dashPattern=2 3;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-75" value="audit rows">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-147" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-58" style="curved=1;startArrow=none;endArrow=block;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-4" value="load models">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-148" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-4" style="curved=1;dashed=1;dashPattern=2 3;startArrow=none;endArrow=block;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-72" value="metrics">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Bhh28nxRp0k3X4s-vNAK-149" edge="1" parent="1" source="Bhh28nxRp0k3X4s-vNAK-4" style="curved=1;dashed=1;dashPattern=2 3;startArrow=none;endArrow=block;rounded=0;" target="Bhh28nxRp0k3X4s-vNAK-73" value="traces">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
