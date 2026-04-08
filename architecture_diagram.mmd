@@ -1,0 +1,276 @@
+flowchart TD
+    subgraph DS["🗄️ Data Sources"]
+        direction LR
+        RSNA_DATA[("RSNA Competition\nDICOM Series\n+ CSV Labels")]
+        LAUSANNE[("Lausanne\nTOF-MRA")]
+        ROYAL[("Royal Brisbane\nTOF-MRA")]
+    end
+
+    subgraph INGEST["📥 Data Ingestion Layer"]
+        KAGGLE_DL["Kaggle API\nDownload"]
+        AWS_DL["AWS S3 Sync\nOpenNeuro"]
+        DICOM_VAL{{"DICOM Validation\n& Integrity Check"}}
+    end
+
+    subgraph PREPROC["⚙️ Preprocessing Pipeline"]
+        D2I_RSNA["dicom2image\n_slice_level.py"]
+        D2I_LAU["dicom2image\n_lausanne.py"]
+        D2I_RB["dicom2image\n_royal_brisbane.py"]
+        CT_WIN["CT Windowing\nW:450 C:40"]
+        NORM["Intensity Norm\n0–255 uint8"]
+        CH3_STACK["3-Channel Stack\nt-1 | t | t+1"]
+        LABEL_PREP["prepare_label\n_slice_level.py"]
+    end
+
+    subgraph FEAT["🔧 Feature Engineering"]
+        BRAIN_BBOX["Brain BBox\nAnnotation\nLabelImg"]
+        ANEURYSM_BBOX["Aneurysm BBox\nAnnotation\n±10 Slice Search"]
+        BRAIN_CROP["Brain Region\nCropping\nRatio 0.75"]
+        AUGMENT{{"Albumentations\nResizedCrop | Rotate\nBlur | CLAHE | HSV"}}
+        KFOLD_SPLIT{{"5-Fold Stratified\nSplit"}}
+    end
+
+    subgraph TRAIN["🧠 Model Training Pipeline"]
+        subgraph T_EXP0["Exp0 — Aneurysm Detection"]
+            EXP0_MODEL(["YOLOv11\n1280px | 5-Fold"])
+            EXP0_METRIC>"mAP50: 0.702\nmAP50-95: 0.465"]
+        end
+
+        subgraph T_EXP1["Exp1 — Brain Detection"]
+            EXP1_MODEL(["YOLOv5-v7.0\n640px | batch 512"])
+            EXP1_METRIC>"mAP50: 0.995\nmAP50-95: 0.948"]
+        end
+
+        subgraph T_EXP2["Exp2 — Classification (RSNA)"]
+            EXP2_VIT(["ViT-Large 384\nCLIP OpenAI"])
+            EXP2_EVA(["EVA-Large 384\nIN22K"])
+            EXP2_METRIC>"AUC: 0.8503\nAUC: 0.8551"]
+        end
+
+        subgraph T_EXP3["Exp3 — Multi-Task (RSNA)"]
+            EXP3_MIT(["MiT-B4 FPN 384\nCls + Seg"])
+            EXP3_METRIC>"AUC: 0.8549"]
+        end
+
+        subgraph T_PSEUDO["🔄 Pseudo Labeling"]
+            CLEAN_NEG["clean_rsna_neg.py\nScore > 0.9 → Pos"]
+            CREATE_PL["create_pseudo_label.py\nScore > 0.5 + Exp0"]
+        end
+
+        subgraph T_EXP4["Exp4 — Classification (+ Pseudo)"]
+            EXP4_VIT(["ViT-Large 384\nCleaned + External"])
+            EXP4_EVA(["EVA-Large 384\nCleaned + External"])
+            EXP4_METRIC>"AUC: 0.8558\nAUC: 0.8579"]
+        end
+
+        subgraph T_EXP5["Exp5 — Multi-Task (+ Pseudo)"]
+            EXP5_MIT(["MiT-B4 FPN 384\nCleaned + External"])
+            EXP5_METRIC>"AUC: 0.8629"]
+        end
+    end
+
+    subgraph EVAL["📊 Evaluation & Ensemble"]
+        OOF_EVAL{{"OOF Evaluation\nWeighted AUC\nPer Anatomy"}}
+        ENS_TUNE["Ensemble Weights\n0.25×exp3 + 0.25×exp5\n0.125×vit2 + 0.125×vit4\n0.125×eva2 + 0.125×eva4"]
+        FINAL_AUC(["✅ Final Score\nTrain: 0.8823\nTest: 0.89"])
+    end
+
+    subgraph REG["📦 Model Registry"]
+        CHECKPOINTS[("6 Model\nCheckpoints\n.pt files")]
+        ENS_CONFIG["Ensemble Config\nWeights + Thresholds"]
+        MODEL_VER{{"Model Versioning\nA/B Flags"}}
+    end
+
+    subgraph SERVE["🚀 Production Inference"]
+        API_GW["API Gateway\nKong\nAuth | RL | mTLS"]
+        UPLOAD_SVC(["Upload Service\nFastAPI\nMultipart DICOM"])
+        EVENT_BUS{{"Kafka Event Bus\nseries.uploaded\nseries.preprocessed\nseries.complete"}}
+        PREPROC_SVC(["Preprocessing Svc\nDICOM Parse\nWindow | Z-Sort"])
+        subgraph GPU_CLUSTER["⚡ Ray Serve GPU Cluster (A10G)"]
+            INF_S1["S1: Brain Det\nYOLOv5 640px\n~30ms"]
+            INF_S2["S2: Crop+Resize\n384px CPU\n~10ms"]
+            INF_S3["S3: Cls Ensemble\n4 Models batch=8\n~200ms"]
+            INF_S4["S4: Localizer\nYOLOv11 1280px\n~50ms"]
+            INF_S5["S5: Merge\nWeighted Ensemble\n~1ms"]
+        end
+        RESULT_SVC(["Result Service\n14-Class Scores\n+ Localizer PNG"])
+    end
+
+    subgraph STORE["💾 Storage Layer"]
+        OBJ_STORE[("S3 / MinIO\nDICOM | Tensors\nPNGs | Weights")]
+        PRIMARY_DB[("PostgreSQL 16\nSeries | Predictions\nAudit Log")]
+        CACHE[("Redis 7 Cluster\nPred Cache\nDist Locks")]
+    end
+
+    subgraph OBS["📡 Observability"]
+        METRICS["Prometheus\n+ Grafana\nGPU | Latency | Lag"]
+        TRACING["OpenTelemetry\n+ Jaeger\nE2E Tracing"]
+        ML_MON["ML Monitoring\nAUC Drift | PSI\nECE Calibration"]
+        AUDIT_LOG["HIPAA Audit\nImmutable Log\nHMAC-SHA256"]
+    end
+
+    %% ============ DATA INGESTION ============
+    RSNA_DATA -- "Kaggle CLI" --> KAGGLE_DL
+    LAUSANNE -- "aws s3 sync" --> AWS_DL
+    ROYAL -- "aws s3 sync" --> AWS_DL
+    KAGGLE_DL --> DICOM_VAL
+    AWS_DL --> DICOM_VAL
+
+    %% ============ PREPROCESSING ============
+    DICOM_VAL -- "RSNA series" --> D2I_RSNA
+    DICOM_VAL -- "Lausanne" --> D2I_LAU
+    DICOM_VAL -- "Royal Brisbane" --> D2I_RB
+    D2I_RSNA --> CT_WIN
+    D2I_LAU --> CT_WIN
+    D2I_RB --> CT_WIN
+    CT_WIN --> NORM
+    NORM --> CH3_STACK
+    D2I_RSNA -- "labels" --> LABEL_PREP
+
+    %% ============ FEATURE ENGINEERING ============
+    CH3_STACK -- "avg slice" --> BRAIN_BBOX
+    CH3_STACK -- "centroid search" --> ANEURYSM_BBOX
+    LABEL_PREP --> KFOLD_SPLIT
+    BRAIN_BBOX --> BRAIN_CROP
+    BRAIN_CROP --> AUGMENT
+    AUGMENT --> KFOLD_SPLIT
+
+    %% ============ TRAINING PHASE 1 ============
+    ANEURYSM_BBOX -- "bbox labels" --> EXP0_MODEL
+    KFOLD_SPLIT -- "fold data" --> EXP0_MODEL
+    KFOLD_SPLIT -- "fold data" --> EXP1_MODEL
+    KFOLD_SPLIT -- "fold data" --> EXP2_VIT
+    KFOLD_SPLIT -- "fold data" --> EXP2_EVA
+    KFOLD_SPLIT -- "fold data" --> EXP3_MIT
+    EXP0_MODEL --> EXP0_METRIC
+    EXP1_MODEL --> EXP1_METRIC
+    EXP2_VIT --> EXP2_METRIC
+    EXP2_EVA --> EXP2_METRIC
+    EXP3_MIT --> EXP3_METRIC
+
+    %% ============ PSEUDO LABELING ============
+    EXP2_METRIC -- "OOF preds" --> CLEAN_NEG
+    EXP3_METRIC -- "OOF preds" --> CLEAN_NEG
+    EXP0_METRIC -- "det boxes" --> CREATE_PL
+    EXP2_METRIC -- "cls scores" --> CREATE_PL
+
+    %% ============ TRAINING PHASE 2 ============
+    CLEAN_NEG -- "cleaned data" --> EXP4_VIT
+    CLEAN_NEG -- "cleaned data" --> EXP4_EVA
+    CLEAN_NEG -- "cleaned data" --> EXP5_MIT
+    CREATE_PL -- "pseudo labels" --> EXP4_VIT
+    CREATE_PL -- "pseudo labels" --> EXP4_EVA
+    CREATE_PL -- "pseudo labels" --> EXP5_MIT
+    EXP4_VIT --> EXP4_METRIC
+    EXP4_EVA --> EXP4_METRIC
+    EXP5_MIT --> EXP5_METRIC
+
+    %% ============ EVALUATION ============
+    EXP2_METRIC --> OOF_EVAL
+    EXP3_METRIC --> OOF_EVAL
+    EXP4_METRIC --> OOF_EVAL
+    EXP5_METRIC --> OOF_EVAL
+    OOF_EVAL -- "weight search" --> ENS_TUNE
+    ENS_TUNE --> FINAL_AUC
+
+    %% ============ MODEL REGISTRY ============
+    FINAL_AUC -- "best weights" --> CHECKPOINTS
+    CHECKPOINTS --> ENS_CONFIG
+    ENS_CONFIG --> MODEL_VER
+
+    %% ============ SERVING ============
+    MODEL_VER -- "load models" --> GPU_CLUSTER
+    API_GW -- "HTTPS" --> UPLOAD_SVC
+    UPLOAD_SVC -- "raw DICOM" --> OBJ_STORE
+    UPLOAD_SVC -- "event" --> EVENT_BUS
+    EVENT_BUS -- "consume" --> PREPROC_SVC
+    PREPROC_SVC -- "tensors ready" --> EVENT_BUS
+    EVENT_BUS -- "dispatch" --> INF_S1
+    INF_S1 -- "brain bbox" --> INF_S2
+    INF_S2 -- "cropped 384px" --> INF_S3
+    INF_S3 -- "cls scores" --> INF_S4
+    INF_S4 -- "det boxes" --> INF_S5
+    INF_S5 -- "final preds" --> RESULT_SVC
+    RESULT_SVC -- "complete event" --> EVENT_BUS
+
+    %% ============ STORAGE ============
+    RESULT_SVC -- "predictions" --> PRIMARY_DB
+    RESULT_SVC -- "hot cache" --> CACHE
+    RESULT_SVC -- "localizer PNG" --> OBJ_STORE
+
+    %% ============ MONITORING ============
+    GPU_CLUSTER -. "metrics" .-> METRICS
+    GPU_CLUSTER -. "traces" .-> TRACING
+    RESULT_SVC -. "drift stats" .-> ML_MON
+    RESULT_SVC -. "access log" .-> AUDIT_LOG
+    PRIMARY_DB -. "audit rows" .-> AUDIT_LOG
+
+    %% ====================================================================
+    %% NODE STYLES — Color-Coded by Functional Group
+    %% ====================================================================
+
+    %% Data Sources — Steel Blue
+    classDef source fill:#3A7BD5,stroke:#2563A8,color:#FFFFFF,stroke-width:2px,font-weight:bold
+    %% Ingestion — Indigo
+    classDef ingest fill:#6366F1,stroke:#4F46E5,color:#FFFFFF,stroke-width:2px
+    %% Preprocessing — Teal
+    classDef preproc fill:#0D9488,stroke:#0B7A6E,color:#FFFFFF,stroke-width:2px
+    %% Feature Engineering — Amber/Orange
+    classDef feature fill:#D97706,stroke:#B45309,color:#FFFFFF,stroke-width:2px
+    %% Model Nodes — Crimson Red
+    classDef model fill:#DC2626,stroke:#B91C1C,color:#FFFFFF,stroke-width:2px,font-weight:bold
+    %% Metric Nodes — Gold
+    classDef metric fill:#EAB308,stroke:#CA8A04,color:#1A1A1A,stroke-width:2px,font-weight:bold
+    %% Pseudo Labeling — Purple
+    classDef pseudo fill:#8B5CF6,stroke:#7C3AED,color:#FFFFFF,stroke-width:2px
+    %% Evaluation — Emerald Green
+    classDef eval fill:#059669,stroke:#047857,color:#FFFFFF,stroke-width:2px,font-weight:bold
+    %% Registry — Pink
+    classDef registry fill:#EC4899,stroke:#DB2777,color:#FFFFFF,stroke-width:2px
+    %% Serving/API — Dodger Blue
+    classDef serve fill:#2563EB,stroke:#1D4ED8,color:#FFFFFF,stroke-width:2px
+    %% GPU Inference — Deep Orange
+    classDef gpu fill:#EA580C,stroke:#C2410C,color:#FFFFFF,stroke-width:2px,font-weight:bold
+    %% Storage — Slate Gray
+    classDef storage fill:#475569,stroke:#334155,color:#FFFFFF,stroke-width:2px
+    %% Monitoring — Forest Green
+    classDef monitor fill:#166534,stroke:#14532D,color:#FFFFFF,stroke-width:2px
+
+    %% ====================================================================
+    %% APPLY STYLES TO NODES
+    %% ====================================================================
+    class RSNA_DATA,LAUSANNE,ROYAL source
+    class KAGGLE_DL,AWS_DL,DICOM_VAL ingest
+    class D2I_RSNA,D2I_LAU,D2I_RB,CT_WIN,NORM,CH3_STACK,LABEL_PREP preproc
+    class BRAIN_BBOX,ANEURYSM_BBOX,BRAIN_CROP,AUGMENT,KFOLD_SPLIT feature
+    class EXP0_MODEL,EXP1_MODEL,EXP2_VIT,EXP2_EVA,EXP3_MIT,EXP4_VIT,EXP4_EVA,EXP5_MIT model
+    class EXP0_METRIC,EXP1_METRIC,EXP2_METRIC,EXP3_METRIC,EXP4_METRIC,EXP5_METRIC metric
+    class CLEAN_NEG,CREATE_PL pseudo
+    class OOF_EVAL,ENS_TUNE,FINAL_AUC eval
+    class CHECKPOINTS,ENS_CONFIG,MODEL_VER registry
+    class API_GW,UPLOAD_SVC,EVENT_BUS,PREPROC_SVC,RESULT_SVC serve
+    class INF_S1,INF_S2,INF_S3,INF_S4,INF_S5 gpu
+    class OBJ_STORE,PRIMARY_DB,CACHE storage
+    class METRICS,TRACING,ML_MON,AUDIT_LOG monitor
+
+    %% ====================================================================
+    %% SUBGRAPH STYLES — Background Colors for Logical Groups
+    %% ====================================================================
+    style DS fill:#EBF5FF,stroke:#3A7BD5,stroke-width:2px,color:#1E3A5F
+    style INGEST fill:#EEF2FF,stroke:#6366F1,stroke-width:2px,color:#312E81
+    style PREPROC fill:#F0FDFA,stroke:#0D9488,stroke-width:2px,color:#134E4A
+    style FEAT fill:#FFFBEB,stroke:#D97706,stroke-width:2px,color:#78350F
+    style TRAIN fill:#FEF2F2,stroke:#DC2626,stroke-width:2px,color:#7F1D1D
+    style T_EXP0 fill:#FFF1F2,stroke:#FCA5A5,stroke-width:1px,color:#881337
+    style T_EXP1 fill:#FFF1F2,stroke:#FCA5A5,stroke-width:1px,color:#881337
+    style T_EXP2 fill:#FFF1F2,stroke:#FCA5A5,stroke-width:1px,color:#881337
+    style T_EXP3 fill:#FFF1F2,stroke:#FCA5A5,stroke-width:1px,color:#881337
+    style T_PSEUDO fill:#F5F3FF,stroke:#8B5CF6,stroke-width:2px,color:#4C1D95
+    style T_EXP4 fill:#FFF1F2,stroke:#FCA5A5,stroke-width:1px,color:#881337
+    style T_EXP5 fill:#FFF1F2,stroke:#FCA5A5,stroke-width:1px,color:#881337
+    style EVAL fill:#ECFDF5,stroke:#059669,stroke-width:2px,color:#064E3B
+    style REG fill:#FDF2F8,stroke:#EC4899,stroke-width:2px,color:#831843
+    style SERVE fill:#EFF6FF,stroke:#2563EB,stroke-width:2px,color:#1E3A8A
+    style GPU_CLUSTER fill:#FFF7ED,stroke:#EA580C,stroke-width:2px,color:#7C2D12
+    style STORE fill:#F8FAFC,stroke:#475569,stroke-width:2px,color:#1E293B
+    style OBS fill:#F0FDF4,stroke:#166534,stroke-width:2px,color:#14532D
